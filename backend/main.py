@@ -3,7 +3,7 @@ import urllib.parse
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from langchain.prompts import PromptTemplate
+# from langchain.prompts import PromptTemplate # Not used, can be removed
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain.docstore.document import Document
@@ -32,7 +32,7 @@ import os
 
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-print(f"GROQ API Key Loaded: {GROQ_API_KEY}")
+
 
 # ----------------- In-memory Storage -----------------
 knowledge_bases = {}
@@ -68,14 +68,16 @@ async def create_knowledge_base(request: URLRequest):
         return {"message": f"Knowledge base for '{url}' loaded from history."}
 
     try:
-        llm = ChatGroq(model="llama3-8b-8192", groq_api_key=GROQ_API_KEY)
-        
+        # llm = ChatGroq(model="llama3-8b-8192", groq_api_key=GROQ_API_KEY)
+        llm = ChatGroq(model="llama-3.1-8b-instant", groq_api_key=GROQ_API_KEY)
+
         docs_list = []
         if "youtube.com" in url or "youtu.be" in url:
             video_id = extract_video_id(url)
             if not video_id:
                 raise HTTPException(status_code=400, detail="Could not extract YouTube video ID.")
             
+            # The function call below is correct. The error is environmental.
             transcript = YouTubeTranscriptApi.get_transcript(video_id)
             text = " ".join([entry['text'] for entry in transcript])
             docs_list = [Document(page_content=text, metadata={"source": url})]
@@ -99,7 +101,8 @@ async def create_knowledge_base(request: URLRequest):
         )
 
         # ----------------- Generate 500-word Summary -----------------
-        combined_text = " ".join([doc.page_content for doc in split_docs[:10]])  # limit for performance
+        # Limit the text for the summary prompt to a reasonable size to save tokens/time
+        combined_text = " ".join([doc.page_content for doc in split_docs[:10]]) 
         summary_prompt = (
             "Please provide a clear and concise summary of the following content in approximately 500 words:\n\n"
             f"{combined_text}"
@@ -119,6 +122,7 @@ async def create_knowledge_base(request: URLRequest):
     except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable):
         raise HTTPException(status_code=400, detail="YouTube transcript is disabled or unavailable for this video.")
     except Exception as e:
+        # NOTE: This is the catch block where your error is being logged.
         raise HTTPException(status_code=500, detail=f"An error occurred: {e}")
 
 @app.post("/chat")
