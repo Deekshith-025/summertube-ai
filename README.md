@@ -15,46 +15,23 @@ SummerTube AI is a full-stack web application that extracts text/transcripts fro
 
 ---
 
-## Tech Stack
+## Setup Instructions (Points)
 
-### **Frontend**
-- React / Vite (or CRA depending on your project)
-- Axios for API calls
-- TailwindCSS / CSS
-
-### **Backend**
-- Node.js + Express
-- LangChain / LLM pipeline
-- YouTube transcript extraction / Web scraping
-- MongoDB (optional if you store history)
-
----
-
-## Project Structure
-summertube-ai/
-│── backend/       # API + summarization logic
-│── frontend/      # UI code (React)
-│── README.md
-
----
-
-## 🔧 Setup Instructions
-
-### Backend
+### Go to the backend folder and install dependencies:
 cd backend
 npm install
-npm start        # or: npm run dev
+npm start   # or npm run dev
 
-### Frontend
+### Go to the frontend folder and install dependencies:
 cd frontend
 npm install
 npm start
 
-### Open the App
-Frontend: http://localhost:3000
-Backend:  http://localhost:5000
+Make sure your environment variables are set correctly (backend .env and frontend .env).
 
-### ** Clone the Repository**
-```bash
-git clone https://github.com/Deekshith-025/summertube-ai.git
-cd summertube-ai
+Run both frontend and backend simultaneously
+Frontend: http://localhost:3000
+Backend: http://localhost:5000
+
+Open the frontend in the browser and the app will automatically communicate with the backend.
+
