@@ -25,35 +25,3 @@ summertube-ai/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
-
-## Getting Started (Local Development)  
-### Prerequisites  
-- Node.js (v16+ recommended)  
-- npm or yarn  
-- (Optional) Docker & docker-compose if you want containerized setup  
-- Git (to clone the repo)  
-- (Optional) A free-tier account on Hugging Face, YouTube Data API key, or other model access depending on your summarization pipeline  
-
-## Setup Back End
-cd backend  
-cp .env.example .env  
-# In .env set:  
-#   MONGO_URI=your_mongo_connection_string  
-#   OPENAI_API_KEY=your_openai_or_model_api_key  
-#   OTHER_SECRETS=...  
-npm install  
-npm run dev   # or npm start for production mode
-
-## Setup Front End
-cd ../frontend  
-cp .env.example .env  
-# In .env set:  
-#   REACT_APP_API_URL=http://localhost:5000   # or your backend URL  
-npm install  
-npm start   # launches development server (usually http://localhost:3000)
-
-### Clone the Repo  
-```bash
-git clone https://github.com/Deekshith-025/summertube-ai.git  
-cd summertube-ai
