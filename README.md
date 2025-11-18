@@ -40,7 +40,8 @@ summertube-ai/
 git clone https://github.com/Deekshith-025/summertube-ai.git  
 cd summertube-ai
 
-### Setup Back End
+
+## Setup Back End
 cd backend  
 cp .env.example .env  
 # In .env set:  
@@ -50,7 +51,7 @@ cp .env.example .env
 npm install  
 npm run dev   # or npm start for production mode
 
-### Setup Front End
+## Setup Front End
 cd ../frontend  
 cp .env.example .env  
 # In .env set:  
