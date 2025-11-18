@@ -1,19 +1,60 @@
-# summertube-ai
+# SummerTube AI  
+AI-powered summarizer for YouTube videos and website content.
 
-Automated summarization of YouTube videos and websites using Deep Learning & NLP
+SummerTube AI is a full-stack web application that extracts text/transcripts from YouTube videos or webpages and generates a clean summary using modern NLP and LLM models.
 
-## Project Overview  
-SummerTube AI is a full-stack application that allows users to paste a YouTube video link or website URL and receive an optimized summary generated via deep learning & natural language processing techniques.  
-- Front end built with React (or your chosen framework) for an interactive UI.  
-- Back end built with Node.js/Express (or your chosen stack) to handle API requests, summarization logic and integration with language models.  
-- Uses LangChain, Hugging Face hosted models and web-scraping (or YouTube data API) to fetch content, process it and generate summaries.
+---
 
-## Features  
-- Input: YouTube video link **or** webpage URL.  
-- Processing:  
-  - Fetches transcript from the video (or extracts text from webpage).  
-  - Preprocesses text (tokenization, cleaning).  
-  - Feeds into deep learning / LLM pipeline (via LangChain) to generate a concise summary.  
-- Output: A human-readable summary shown in the UI.  
-- Optional: Download summary as text/pdf, or save to history.  
-- Responsive UI for desktop and mobile.
+## Features
+- Summarize **YouTube video transcripts**
+- Summarize **website/article content**
+- Uses AI / LLM models for high-quality summaries
+- Fast & simple user interface
+- Full-stack architecture (frontend + backend)
+- Easy to extend with more models or data sources
+
+---
+
+## Tech Stack
+
+### **Frontend**
+- React / Vite (or CRA depending on your project)
+- Axios for API calls
+- TailwindCSS / CSS
+
+### **Backend**
+- Node.js + Express
+- LangChain / LLM pipeline
+- YouTube transcript extraction / Web scraping
+- MongoDB (optional if you store history)
+
+---
+
+## Project Structure
+summertube-ai/
+│── backend/       # API + summarization logic
+│── frontend/      # UI code (React)
+│── README.md
+
+---
+
+## 🔧 Setup Instructions
+
+### Backend
+cd backend
+npm install
+npm start        # or: npm run dev
+
+### Frontend
+cd frontend
+npm install
+npm start
+
+### Open the App
+Frontend: http://localhost:3000
+Backend:  http://localhost:5000
+
+### ** Clone the Repository**
+```bash
+git clone https://github.com/Deekshith-025/summertube-ai.git
+cd summertube-ai
