@@ -35,12 +35,6 @@ summertube-ai/
 - Git (to clone the repo)  
 - (Optional) A free-tier account on Hugging Face, YouTube Data API key, or other model access depending on your summarization pipeline  
 
-### Clone the Repo  
-```bash
-git clone https://github.com/Deekshith-025/summertube-ai.git  
-cd summertube-ai
-
-
 ## Setup Back End
 cd backend  
 cp .env.example .env  
@@ -58,3 +52,8 @@ cp .env.example .env
 #   REACT_APP_API_URL=http://localhost:5000   # or your backend URL  
 npm install  
 npm start   # launches development server (usually http://localhost:3000)
+
+### Clone the Repo  
+```bash
+git clone https://github.com/Deekshith-025/summertube-ai.git  
+cd summertube-ai
