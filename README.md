@@ -15,17 +15,17 @@ SummerTube AI is a full-stack web application that extracts text/transcripts fro
 
 ---
 
-## Setup Instructions (Points)
+## Setup Instructions
 
 1. Go to the backend folder and install dependencies:
-cd backend
-npm install
-npm start   # or npm run dev
+- cd backend
+- pip install -r requirements.txt
+- uvicorn main:app --reload
 
 2. Go to the frontend folder and install dependencies:
-cd frontend
-npm install
-npm start
+cd frontend /
+npm install /
+npm start /
 
 3. Make sure your environment variables are set correctly (backend .env and frontend .env).
 
