@@ -17,21 +17,20 @@ SummerTube AI is a full-stack web application that extracts text/transcripts fro
 
 ## Setup Instructions (Points)
 
-### Go to the backend folder and install dependencies:
+1. Go to the backend folder and install dependencies:
 cd backend
 npm install
 npm start   # or npm run dev
 
-### Go to the frontend folder and install dependencies:
+2. Go to the frontend folder and install dependencies:
 cd frontend
 npm install
 npm start
 
-Make sure your environment variables are set correctly (backend .env and frontend .env).
+3. Make sure your environment variables are set correctly (backend .env and frontend .env).
 
-Run both frontend and backend simultaneously
-Frontend: http://localhost:3000
-Backend: http://localhost:5000
+4. Run both frontend and backend simultaneously
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
-Open the frontend in the browser and the app will automatically communicate with the backend.
-
+5. Open the frontend in the browser and the app will automatically communicate with the backend.
